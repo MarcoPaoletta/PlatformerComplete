@@ -1,0 +1,350 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://rsc/Steve/Steve.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tiles/Level.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/tiles/LevelOneWay.tres" type="TileSet" id=3]
+[ext_resource path="res://rsc/HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rsc/Portal/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rsc/FallZone/FallZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/fonts/KiriFont.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/arrow/arrow.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/set2_background.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/set2_tiles.png" type="Texture" id=11]
+[ext_resource path="res://rsc/Coin/Coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://rsc/Enemy/Enemy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 70.3849, 16.0548 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Arrow" type="Sprite" parent="."]
+position = Vector2( -1019.72, 451.125 )
+rotation = -1.5708
+scale = Vector2( 0.139714, 0.139714 )
+texture = ExtResource( 8 )
+
+[node name="Portal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 5743.45, -144.325 )
+
+[node name="Portal" parent="Portal" index="0"]
+position = Vector2( 0, 50 )
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TilesSolid" type="TileMap" parent="Tiles"]
+position = Vector2( 1, 0 )
+tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( -1441810, 0, 0, -1376274, 0, 0, -1310738, 0, 0, -1245202, 0, 0, -1179666, 0, 0, -1114130, 0, 0, -1048594, 0, 0, -983058, 0, 0, -917522, 0, 0, -851986, 0, 0, -786450, 0, 0, -720914, 0, 0, -655378, 0, 0, -589842, 0, 0, -524306, 0, 0, -458770, 0, 0, -393234, 0, 0, -327698, 0, 0, -262162, 0, 0, -196626, 0, 0, -131090, 0, 0, -65554, 0, 0, -18, 0, 0, 65518, 0, 0, 131054, 0, 0, 196590, 0, 0, 262126, 0, 0, 196613, 2, 0, 327662, 0, 0, 262148, 2, 0, 262149, 0, 0, 393198, 0, 0, 327683, 2, 0, 327684, 0, 0, 327685, 0, 0, 458734, 0, 0, 393218, 2, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 524270, 0, 0, 524275, 2, 0, 524278, 2, 0, 524282, 2, 0, 524286, 2, 0, 458753, 2, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 589807, 1, 0, 589808, 2, 0, 589809, 2, 0, 589810, 2, 0, 589811, 2, 0, 589812, 2, 0, 589813, 2, 0, 589814, 2, 0, 589815, 2, 0, 589816, 2, 0, 589817, 2, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 655343, 0, 0, 655344, 0, 0, 655345, 0, 0, 655346, 0, 0, 655347, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 786415, 0, 0, 786416, 0, 0, 786417, 0, 0, 786418, 0, 0, 786419, 0, 0, 786420, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0 )
+
+[node name="TilesOneWay" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles/TilesOneWay"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -1025.38, 380.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -1025.38, 252.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -833.385, 124.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -641.385, -3.33978 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -833.385, -131.34 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -1025.38, -259.34 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 638.62, 380.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 894.62, 636.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 1214.62, 508.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 1470.62, 252.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 1982.62, 252.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 2366.62, 636.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 2750.62, 764.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 3134.62, 444.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 3518.62, 700.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 3902.62, 636.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D17" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 4350.62, 636.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D18" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 4478.62, 444.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D19" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 4862.62, 508.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D20" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( 5246.62, 316.66 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="PurpleSky" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="Background/PurpleSky"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="BackBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.690196, 0.231373, 0.741176, 0.262745 )
+position = Vector2( 0, -500 )
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 2560, 1920 )
+
+[node name="Sprite" type="Sprite" parent="Background/BackBlocks"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="MiddleBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.560784, 0.764706, 0.733333, 0.478431 )
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 1600, 1200 )
+
+[node name="Sprite" type="Sprite" parent="Background/MiddleBlocks"]
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="NearbyBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.486275, 0.270588, 0.270588, 0.12549 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1120, 840 )
+
+[node name="Sprite" type="Sprite" parent="Background/NearbyBlocks"]
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Steve" parent="." instance=ExtResource( 1 )]
+position = Vector2( -512, 64 )
+collision_mask = 30
+
+[node name="Camera2D" type="Camera2D" parent="Steve"]
+position = Vector2( 128, 128 )
+current = true
+limit_left = -1088
+limit_top = -1000
+limit_right = 6000
+limit_bottom = 770
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="FinishTimer" type="Timer" parent="Steve"]
+wait_time = 10.0
+one_shot = true
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="Steve"]
+stream = ExtResource( 17 )
+volume_db = -8.0
+autoplay = true
+
+[node name="FallZone" parent="." instance=ExtResource( 6 )]
+
+[node name="CoinsContainer" type="Node2D" parent="."]
+
+[node name="Coin1" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -1055.58, -361.167 )
+
+[node name="Coin2" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -710.58, 469 )
+
+[node name="Coin3" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -710.58, 469 )
+
+[node name="Coin4" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -454.58, 469 )
+
+[node name="Coin5" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -198.58, 469 )
+
+[node name="Coin6" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 358.42, 150 )
+
+[node name="Coin7" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 639.42, 292 )
+
+[node name="Coin8" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 895.42, 548 )
+
+[node name="Coin9" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 1215.42, 420 )
+
+[node name="Coin10" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 1471.42, 164 )
+
+[node name="Coin11" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 1983.42, 164 )
+
+[node name="Coin12" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 2367.42, 548 )
+
+[node name="Coin13" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 2687.42, 676 )
+
+[node name="Coin14" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 3135.42, 164 )
+
+[node name="Coin15" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 3519.42, 420 )
+
+[node name="Coin16" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 3903.42, 548 )
+
+[node name="Coin17" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 4351.42, 548 )
+
+[node name="Coin18" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 4479.42, 356 )
+
+[node name="Coin19" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 4863.42, 420 )
+
+[node name="Coin20" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 5247.42, 228 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( -484, 495 )
+speed = 100
+detects_clifs = false
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( -216, 496 )
+speed = 70
+detects_clifs = false
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( -728, 496 )
+speed = 40
+detects_clifs = false
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+finish = 13
+
+[node name="Maybe" type="Label" parent="."]
+margin_left = -832.0
+margin_top = 552.0
+margin_right = -58.0
+margin_bottom = 697.0
+custom_fonts/font = SubResource( 2 )
+text = "maybe there are
+hidden coins"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="Portal/Portal" to="HUD" method="_on_Portal_body_entered"]
+[connection signal="anim_pos" from="Steve" to="Portal" method="_on_Steve_anim_pos"]
+[connection signal="body_entered" from="FallZone" to="Steve" method="_on_FallZone_body_entered"]
+[connection signal="coin_collected" from="CoinsContainer/Coin1" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin8" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin9" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin10" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin11" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin12" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin14" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin15" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin16" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin17" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin18" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin19" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin20" to="HUD" method="_on_coin_collected"]
+[connection signal="enemy_dead" from="Enemies/Enemy1" to="HUD" method="_on_enemy_dead"]
+[connection signal="enemy_dead" from="Enemies/Enemy3" to="HUD" method="_on_enemy_dead"]
+[connection signal="enemy_dead" from="Enemies/Enemy4" to="HUD" method="_on_enemy_dead"]
+[connection signal="player_anim" from="HUD" to="Steve" method="_on_HUD_player_anim"]
+
+[editable path="Portal"]

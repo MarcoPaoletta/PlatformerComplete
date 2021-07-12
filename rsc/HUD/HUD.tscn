@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://rsc/HUD/HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/enemies/slimeBlue.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/HUD/coin_gold.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.219608 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=4]
+size = 52
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 70
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 50
+font_data = ExtResource( 3 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+finish = 5
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 18.0
+margin_top = 22.0
+margin_right = 224.0
+margin_bottom = 114.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 26.4433
+margin_top = 34.8378
+margin_right = 95.4433
+margin_bottom = 103.838
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X" type="Label" parent="."]
+margin_left = 104.593
+margin_top = 37.0098
+margin_right = 144.593
+margin_bottom = 100.01
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.862745, 0.113725, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coins" type="Label" parent="."]
+margin_left = 136.638
+margin_top = 35.9666
+margin_right = 293.638
+margin_bottom = 119.967
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 1, 0.862745, 0.113725, 1 )
+text = "##"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 846.0
+margin_top = 28.0
+margin_right = 1013.0
+margin_bottom = 101.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+margin_left = 852.023
+margin_top = 46.5579
+margin_right = 909.023
+margin_bottom = 80.5579
+texture = ExtResource( 2 )
+stretch_mode = 1
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="X2" type="Label" parent="."]
+margin_left = 915.852
+margin_top = 33.8213
+margin_right = 939.852
+margin_bottom = 96.8213
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0784314, 1, 0.964706, 1 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemies" type="Label" parent="."]
+margin_left = 946.802
+margin_top = 25.7006
+margin_right = 1103.8
+margin_bottom = 109.701
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0784314, 1, 0.964706, 1 )
+text = "##"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

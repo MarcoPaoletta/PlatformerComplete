@@ -1,0 +1,170 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://rsc/Steve/Steve.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/tiles/Level.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/tiles/LevelOneWay.tres" type="TileSet" id=3]
+[ext_resource path="res://rsc/HUD/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://rsc/Portal/Portal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://rsc/FallZone/FallZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/background/set2_background.png" type="Texture" id=10]
+[ext_resource path="res://assets/background/set2_tiles.png" type="Texture" id=11]
+[ext_resource path="res://rsc/Coin/Coin.tscn" type="PackedScene" id=12]
+[ext_resource path="res://rsc/Enemy/Enemy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/music/Retro Beat.ogg" type="AudioStream" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160.668, 10 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="Portal" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2859.52, 300 )
+
+[node name="Portal" parent="Portal" index="0"]
+position = Vector2( 0, 50 )
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="TilesSolid" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( 65518, 0, 0, 47, 0, 0, 131054, 0, 0, 65583, 0, 0, 196590, 0, 0, 131086, 6, 0, 131087, 2, 0, 131088, 2, 0, 131089, 2, 0, 131090, 7, 0, 131119, 0, 0, 262126, 0, 0, 196655, 0, 0, 327662, 0, 0, 262154, 6, 0, 262155, 2, 0, 262156, 2, 0, 262157, 7, 0, 262191, 0, 0, 393198, 0, 0, 327700, 6, 0, 327701, 7, 0, 327727, 0, 0, 458734, 0, 0, 393263, 0, 0, 524270, 0, 0, 458799, 0, 0, 589807, 1, 0, 589808, 2, 0, 589809, 2, 0, 589810, 2, 0, 589811, 2, 0, 589812, 2, 0, 589813, 2, 0, 589814, 2, 0, 589815, 2, 0, 589816, 2, 0, 589817, 2, 0, 589818, 2, 0, 589819, 2, 0, 589820, 2, 0, 589821, 2, 0, 589822, 2, 0, 589823, 2, 0, 524288, 2, 0, 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 2, 0, 524293, 2, 0, 524294, 2, 0, 524295, 2, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0, 524299, 2, 0, 524300, 2, 0, 524301, 3, 0, 524312, 1, 0, 524313, 2, 0, 524314, 2, 0, 524315, 2, 0, 524316, 2, 0, 524317, 2, 0, 524318, 2, 0, 524319, 2, 0, 524320, 2, 0, 524321, 2, 0, 524322, 2, 0, 524323, 2, 0, 524324, 2, 0, 524325, 2, 0, 524326, 2, 0, 524327, 2, 0, 524328, 2, 0, 524329, 2, 0, 524330, 2, 0, 524331, 2, 0, 524332, 2, 0, 524333, 2, 0, 524334, 3, 0, 655343, 0, 0, 655344, 0, 0, 655345, 0, 0, 655346, 0, 0, 655347, 0, 0, 655348, 0, 0, 655349, 0, 0, 655350, 0, 0, 655351, 0, 0, 655352, 0, 0, 655353, 0, 0, 655354, 0, 0, 655355, 0, 0, 655356, 0, 0, 655357, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 589859, 0, 0, 589860, 0, 0, 589861, 0, 0, 589862, 0, 0, 589863, 0, 0, 589864, 0, 0, 589865, 0, 0, 589866, 0, 0, 589867, 0, 0, 589868, 0, 0, 589869, 0, 0, 589870, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720884, 0, 0, 720885, 0, 0, 720886, 0, 0, 720887, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 720895, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 655404, 0, 0, 655405, 0, 0, 655406, 0, 0, 786415, 0, 0, 786416, 0, 0, 786417, 0, 0, 786418, 0, 0, 786419, 0, 0, 786420, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720927, 0, 0, 720928, 0, 0, 720929, 0, 0, 720930, 0, 0, 720931, 0, 0, 720932, 0, 0, 720933, 0, 0, 720934, 0, 0, 720935, 0, 0, 720936, 0, 0, 720937, 0, 0, 720938, 0, 0, 720939, 0, 0, 720940, 0, 0, 720941, 0, 0, 720942, 0, 0 )
+
+[node name="TilesOneWay" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+collision_mask = 49
+format = 1
+tile_data = PoolIntArray( 393213, 1, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 3, 0, 458749, 0, 0, 458750, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 524285, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tiles/TilesOneWay"]
+collision_layer = 2
+collision_mask = 49
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tiles/TilesOneWay/StaticBody2D"]
+position = Vector2( -33.7149, 329.957 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+[node name="PurpleSky" type="ParallaxLayer" parent="Background"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="Background/PurpleSky"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="BackBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.690196, 0.231373, 0.741176, 0.262745 )
+position = Vector2( 0, -500 )
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 2560, 1920 )
+
+[node name="Sprite" type="Sprite" parent="Background/BackBlocks"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="MiddleBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.560784, 0.764706, 0.733333, 0.478431 )
+motion_scale = Vector2( 0.4, 0.4 )
+motion_mirroring = Vector2( 1600, 1200 )
+
+[node name="Sprite" type="Sprite" parent="Background/MiddleBlocks"]
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="NearbyBlocks" type="ParallaxLayer" parent="Background"]
+modulate = Color( 0.486275, 0.270588, 0.270588, 0.12549 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1120, 840 )
+
+[node name="Sprite" type="Sprite" parent="Background/NearbyBlocks"]
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Steve" parent="." instance=ExtResource( 1 )]
+position = Vector2( -527.282, 25.2459 )
+collision_mask = 30
+
+[node name="Camera2D" type="Camera2D" parent="Steve"]
+current = true
+limit_left = -1088
+limit_top = -800
+limit_right = 3007
+limit_bottom = 700
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+
+[node name="FinishTimer" type="Timer" parent="Steve"]
+wait_time = 10.0
+one_shot = true
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="Steve"]
+stream = ExtResource( 17 )
+volume_db = -8.0
+autoplay = true
+
+[node name="FallZone" parent="." instance=ExtResource( 6 )]
+
+[node name="CoinsContainer" type="Node2D" parent="."]
+
+[node name="Coin1" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( -16, 184 )
+
+[node name="Coin2" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 768, 216 )
+
+[node name="Coin3" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 1056, 88 )
+
+[node name="Coin4" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 1344, 232 )
+
+[node name="Coin5" parent="CoinsContainer" instance=ExtResource( 12 )]
+position = Vector2( 2704, 352 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( 624, 496 )
+detects_clifs = false
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( 2400, 496 )
+speed = 150
+direction = 1
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( -8, 240 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 16 )]
+position = Vector2( 1056, 112 )
+
+[node name="HUD" parent="." instance=ExtResource( 4 )]
+[connection signal="body_entered" from="Portal/Portal" to="HUD" method="_on_Portal_body_entered"]
+[connection signal="anim_pos" from="Steve" to="Portal" method="_on_Steve_anim_pos"]
+[connection signal="body_entered" from="FallZone" to="Steve" method="_on_FallZone_body_entered"]
+[connection signal="coin_collected" from="CoinsContainer/Coin1" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin3" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="CoinsContainer/Coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="enemy_dead" from="Enemies/Enemy1" to="HUD" method="_on_enemy_dead"]
+[connection signal="enemy_dead" from="Enemies/Enemy3" to="HUD" method="_on_enemy_dead"]
+[connection signal="enemy_dead" from="Enemies/Enemy2" to="HUD" method="_on_enemy_dead"]
+[connection signal="enemy_dead" from="Enemies/Enemy4" to="HUD" method="_on_enemy_dead"]
+[connection signal="player_anim" from="HUD" to="Steve" method="_on_HUD_player_anim"]
+
+[editable path="Portal"]
