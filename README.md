@@ -1,8 +1,8 @@
-# PlartformerV2
+# PlartformerComplete
 * Juego de plataformas en su seguna version, con numersos cambios a la [DEMO](https://github.com/MarcoPaoletta/PlatformerDEMO) la cual solo tenia las mecanicas basicas para realizar un juego del estilo
 * En esta segunda version, tenemos un total de tres niveles. El usuario puede dar click sobre estos y comenzar a jugar en dicho nivel
 
-    <img width = 256  src=https://github.com/MarcoPaoletta/PlartformerV2/blob/main/Menu.png >
+    <img width = 256  src=https://github.com/MarcoPaoletta/PlartformerComplete/blob/main/Menu.png >
 
 * Ademas, hay un contador de enemigos muertos en la parte superior derecha
 
@@ -11,20 +11,20 @@
 * Caso contrario de no tener todas las monedas, el portal no interactura con el jugador callendo asi al vacio y teniendo que comenzar de nuevo
   * Demostracion de ambas situaciones:
     * Tenemos todas las monedas del nivel:  
-        <img  width = 256 src=https://github.com/MarcoPaoletta/PlartformerV2/blob/main/Win.gif >
+        <img  width = 256 src=https://github.com/MarcoPaoletta/PlartformerComplete/blob/main/Win.gif >
 
     *  Nos faltan algunas monedas del nivel:  
-        <img width = 256 src=https://github.com/MarcoPaoletta/PlartformerV2/blob/main/Can%20not%20win.gif >
+        <img width = 256 src=https://github.com/MarcoPaoletta/PlartformerComplete/blob/main/Can%20not%20win.gif >
 * Por ultimo, el nivel final tiene la mayoria de plataformas invisibles con el fin de aumentar la dificultad
  
-    <img width = 256  src=https://github.com/MarcoPaoletta/PlartformerV2/blob/main/InvisibleLevel.gif >
+    <img width = 256  src=https://github.com/MarcoPaoletta/PlartformerComplete/blob/main/InvisibleLevel.gif >
 
 ---
 
 # Gameplay nivel 1
 * Asi es como luce una parte del primer nivel del videojuego
  
-    <img width = 256 src=https://github.com/MarcoPaoletta/PlartformerV2/blob/main/Gameplay1.gif >
+    <img width = 256 src=https://github.com/MarcoPaoletta/PlartformerComplete/blob/main/Gameplay1.gif >
 
 ---
 # Descargar Godot Engine e importar el proyecto
